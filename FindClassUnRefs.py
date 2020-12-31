@@ -316,7 +316,7 @@ def write_to_file(unref_symbols, find_ivars_class_list):
 
     num = 1
     if len(find_ivars_class_list):
-        show_title = "未被使用的类列表中 -- 出现在已使用类的属性中的类 --------"
+        show_title = "\n查找结果：\n只作为其他类的成员变量，不确定有没有真正被使用，请在项目中查看 --------"
         print(show_title)
         f.write(show_title + "\n")
         for name in find_ivars_class_list:
@@ -326,7 +326,7 @@ def write_to_file(unref_symbols, find_ivars_class_list):
             num = num + 1
 
     num = 1
-    print("\n")
+    print("\n未使用的类 --------")
     for unref_symbol in unref_symbols:
         showStr = ('%d : %s' % (num, unref_symbol))
         print(showStr)
